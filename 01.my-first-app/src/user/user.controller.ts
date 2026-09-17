@@ -5,6 +5,6 @@ import { get } from 'http';
 export class UserController {
     @Get()
     getUser(){
-        return 'User data feteched successfully!';
+        return 'User data feteched successfully !';
     }
 }
