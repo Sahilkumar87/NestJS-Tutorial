@@ -8,6 +8,9 @@ import { ProductController } from './product/product.controller.js';
 import { EmployeeModule } from './employee/employee.module.js';
 import { TestController } from './test/test.controller.js';
 import { TestService } from './test/test.service.js';
+import { CategoryModule } from './category/category.module.js';
+import { CateforyController } from './catefory/catefory.controller.js';
+import { CategoryModule } from './category/category.module.js';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
@@ -21,8 +24,9 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
       serviceId: 'my-first-app',
     }),
     EmployeeModule,
+    CategoryModule,
   ],
-  controllers: [AppController, UserController, ProductController, TestController],
+  controllers: [AppController, UserController, ProductController, TestController, CateforyController],
   providers: [AppService, ProductService, TestService],
 })
 export class AppModule {}
