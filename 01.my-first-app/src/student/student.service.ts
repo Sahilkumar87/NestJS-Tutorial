@@ -37,6 +37,7 @@ export class StudentService {
 
     // PUT
     updateStudent(id: number, data: {name: string; age: number}){
+        id = Number(id);
         const index = this.students.findIndex((s) => s.id === id);
         if(index === -1) throw new NotFoundException("Student not found!");
         this.students[index] = {id, ...data};
@@ -45,7 +46,11 @@ export class StudentService {
 
     // PATCH
     patchStudent(id: number, data: Partial<{name: string; age: number}>){
+        id = Number(id);
         const student = this.getStudentById(id);
+        if(!student){
+            throw new NotFoundException("Student not found");
+        }
         Object.assign(student, data);
         return student;
 

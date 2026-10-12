@@ -21,13 +21,13 @@ export class StudentController {
     }
 
     @Put(':id')
-    update(@Param() id: string, @Body() body: {name: string; age: number}){
+    update(@Param('id') id: string, @Body() body: {name: string; age: number}){
         return this.studentService.updateStudent(Number(id), body);
     }
 
     
     @Patch(':id')
-    patch(@Param() id: string, @Body() body: Partial<{name: string; age: number}>){
+    patch(@Param('id') id: string, @Body() body: Partial<{name: string; age: number}>){
         return this.studentService.patchStudent(Number(id), body);
     }
 
