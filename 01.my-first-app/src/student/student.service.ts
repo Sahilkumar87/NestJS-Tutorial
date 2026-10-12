@@ -11,7 +11,7 @@ export class StudentService {
         },
         {
             id: 2, 
-            name: "Sneha",
+            name: "vijay",
             age: 21,
         },
     ];
