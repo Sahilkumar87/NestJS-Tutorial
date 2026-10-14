@@ -11,6 +11,7 @@ import { TestService } from './test/test.service.js';
 import { StoreModule } from './store/store.module.js';
 import { StudentModule } from './student/student.module.js';
 import { CustomerModule } from './customer/customer.module.js';
+import { MynameController } from './myname/myname.controller.js';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
@@ -28,7 +29,7 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
     StudentModule,
     CustomerModule,
   ],
-  controllers: [AppController, UserController, ProductController, TestController,],
+  controllers: [AppController, UserController, ProductController, TestController, MynameController,],
   providers: [AppService, ProductService, TestService],
 })
 export class AppModule {}
