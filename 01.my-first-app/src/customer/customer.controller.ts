@@ -1,4 +1,20 @@
-import { Controller } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
+import { CreateCustomerDto } from './dto/create-customer.dto.js';
+import { CustomerService } from './customer.service.js';
 
 @Controller('customer')
-export class CustomerController {}
+export class CustomerController {
+    constructor(private readonly customerService: CustomerService){}
+
+    @Get()
+    getCustomers(){
+        return this.customerService.getAllCustomers();
+    }
+
+    
+    @Post()
+    addCustomer(@Body() createCustomerDto: CreateCustomerDto){
+        return this.customerService.addCustomer(createCustomerDto);
+        
+    }
+}
