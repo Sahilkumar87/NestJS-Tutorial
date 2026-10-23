@@ -16,6 +16,8 @@ import { UserRolesController } from './user-roles/user-roles.controller.js';
 import { ExceptionController } from './exception/exception.controller.js';
 import { PipesConsumer } from '@nestjs/core/internal';
 import { LoggerMiddleware } from './middleware/logger/logger.middleware.js';
+import { DatabaseService } from './database/database.service.js';
+import { DatabaseController } from './database/database.controller.js';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
@@ -33,8 +35,8 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
     StudentModule,
     CustomerModule,
   ],
-  controllers: [AppController, UserController, ProductController, TestController, MynameController, UserRolesController, ExceptionController,],
-  providers: [AppService, ProductService, TestService],
+  controllers: [AppController, UserController, ProductController, TestController, MynameController, UserRolesController, ExceptionController, DatabaseController,],
+  providers: [AppService, ProductService, TestService, DatabaseService],
 })
 export class AppModule implements NestModule {
 configure(consumer: MiddlewareConsumer){
