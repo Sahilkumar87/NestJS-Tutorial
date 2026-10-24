@@ -1,0 +1,4 @@
+atlas_username=sahilkumar06804_db_user
+atlas_password=DgI5JPQDdUxscMHL
+
+mongodb+srv://sahilkumar06804_db_user:DgI5JPQDdUxscMHL@cluster0.g4rp4uk.mongodb.net/
