@@ -5,6 +5,7 @@ import { AppService } from './app.service.js';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 import { HomeController } from './home/home.controller.js';
+import { StudentModule } from './student/student.module.js';
 
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
@@ -23,6 +24,7 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
       appSecret: process.env.OBSERVE_APP_SECRET ?? 'YOUR_APP_SECRET',
       serviceId: 'mongodb.nest',
     }),
+    StudentModule,
   ],
   controllers: [AppController, HomeController],
   providers: [AppService],
