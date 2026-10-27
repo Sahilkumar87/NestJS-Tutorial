@@ -1,6 +1,7 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Patch, Post, Put } from '@nestjs/common';
 import { StudentService } from './student.service.js';
 import { Student } from './student.schema.js';
+import { stringify } from 'node:querystring';
 
 @Controller('student')
 export class StudentController {
@@ -22,5 +23,29 @@ export class StudentController {
     async getStudent(@Param('id') id: string){
         return this.studentService.getAllStudent();
     }
+
+    @Put(':id')
+    async updateStudent(
+        @Param('id') id: string,
+        @Body() data: Partial<Student>,
+    ){
+
+        return this.studentService.updateStudent(id, data);
+
+        
+    }
+
+    @Patch(':id')
+    async patchStudent(
+        @Param('id') id: string,
+        @Body() data: Partial<Student>,
+    ){
+
+        return this.studentService.patchStudent(id, data);
+
+        
+    }
+
+    
 
 }
