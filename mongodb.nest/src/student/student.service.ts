@@ -42,5 +42,10 @@ export class StudentService {
 
     }
 
+    async deleteStudent(id: string): Promise<Student | null>{
+        return this.studentModel.findByIdAndDelete(id).exec();
+
+    }
+
     
 }

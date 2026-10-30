@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Patch, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, Put } from '@nestjs/common';
 import { StudentService } from './student.service.js';
 import { Student } from './student.schema.js';
 import { stringify } from 'node:querystring';
@@ -44,6 +44,11 @@ export class StudentController {
         return this.studentService.patchStudent(id, data);
 
         
+    }
+
+    @Delete(':id')
+    async deleteStudent(@Param('id')id : string){
+        return this.studentService.deleteStudent(id);
     }
 
     
