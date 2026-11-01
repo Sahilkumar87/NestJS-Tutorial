@@ -49,6 +49,8 @@ export class StudentController {
     @Delete(':id')
     async deleteStudent(@Param('id')id : string){
         return this.studentService.deleteStudent(id);
+
+        
     }
 
     
